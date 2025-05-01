@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>ERCYS</title>
   <style>
-    html, body {
+    body {
       margin: 0;
       padding: 0;
       background-color: black;
@@ -13,62 +13,70 @@
       font-family: sans-serif;
       height: 100vh;
       width: 100vw;
-      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       position: relative;
+      overflow: hidden;
+    }
+
+    .center {
+      position: relative;
+      text-align: center;
     }
 
     .center-text {
       font-size: 6vw;
-      letter-spacing: 2px;
+      font-weight: bold;
+      z-index: 1;
+    }
+
+    .surrounding {
       position: absolute;
       top: 50%;
       left: 50%;
+      width: 90vw;
+      height: 90vw;
+      max-width: 600px;
+      max-height: 600px;
       transform: translate(-50%, -50%);
-      z-index: 1;
-      text-align: center;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+      pointer-events: none;
     }
 
     .love-text {
       color: red;
-      font-size: 3vw;
+      font-size: 3.5vw;
       font-weight: bold;
-      position: absolute;
       white-space: nowrap;
     }
 
-    /* Responsive homojen dağıtım: yüzdelerle konumlar */
-    .top-left    { top: 15%; left: 15%; transform: rotate(-10deg); }
-    .top-right   { top: 15%; right: 15%; transform: rotate(10deg); }
-    .bottom-left { bottom: 15%; left: 15%; transform: rotate(5deg); }
-    .bottom-right{ bottom: 15%; right: 15%; transform: rotate(-5deg); }
-    .left        { top: 50%; left: 5%; transform: translateY(-50%) rotate(-8deg); }
-    .right       { top: 50%; right: 5%; transform: translateY(-50%) rotate(8deg); }
-    .top         { top: 5%; left: 50%; transform: translateX(-50%) rotate(3deg); }
-    .bottom      { bottom: 5%; left: 50%; transform: translateX(-50%) rotate(-3deg); }
-
-    /* Yazıların çok küçük olmaması için mobil ayarı */
     @media (max-width: 600px) {
-      .center-text {
-        font-size: 8vw;
-      }
-
       .love-text {
         font-size: 4vw;
+      }
+
+      .center-text {
+        font-size: 10vw;
       }
     }
   </style>
 </head>
 <body>
-  <div class="center-text">ERCYS</div>
-
-  <!-- Yazılar -->
-  <div class="love-text top-left">karımı çok seviyorum</div>
-  <div class="love-text top-right">karımı çok seviyorum</div>
-  <div class="love-text bottom-left">karımı çok seviyorum</div>
-  <div class="love-text bottom-right">karımı çok seviyorum</div>
-  <div class="love-text left">karımı çok seviyorum</div>
-  <div class="love-text right">karımı çok seviyorum</div>
-  <div class="love-text top">karımı çok seviyorum</div>
-  <div class="love-text bottom">karımı çok seviyorum</div>
+  <div class="center">
+    <div class="center-text">ERCYS</div>
+    <div class="surrounding">
+      <div class="love-text">karımı çok seviyorum</div>
+      <div class="love-text">karımı çok seviyorum</div>
+      <div class="love-text">karımı çok seviyorum</div>
+      <div class="love-text">karımı çok seviyorum</div>
+      <div class="love-text">karımı çok seviyorum</div>
+      <div class="love-text">karımı çok seviyorum</div>
+    </div>
+  </div>
 </body>
 </html>
