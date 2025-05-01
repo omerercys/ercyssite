@@ -5,42 +5,57 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>ERCYS</title>
   <style>
-    body {
+    html, body {
       margin: 0;
       padding: 0;
       background-color: black;
       color: white;
       font-family: sans-serif;
       height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
+      width: 100vw;
+      overflow: hidden;
       position: relative;
     }
 
     .center-text {
-      font-size: 36px;
+      font-size: 6vw;
       letter-spacing: 2px;
-      position: relative;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
       z-index: 1;
+      text-align: center;
     }
 
     .love-text {
       color: red;
-      font-size: 16px;
+      font-size: 3vw;
       font-weight: bold;
       position: absolute;
+      white-space: nowrap;
     }
 
-    /* Etrafına homojen dağıtılmış yazılar */
-    .top-left    { top: 20%;  left: 25%;  transform: rotate(-10deg); }
-    .top-right   { top: 20%;  right: 25%; transform: rotate(10deg); }
-    .bottom-left { bottom: 20%; left: 25%; transform: rotate(5deg); }
-    .bottom-right{ bottom: 20%; right: 25%; transform: rotate(-5deg); }
-    .left        { top: 50%;  left: 10%;  transform: translateY(-50%) rotate(-8deg); }
-    .right       { top: 50%;  right: 10%; transform: translateY(-50%) rotate(8deg); }
-    .top         { top: 10%;  left: 50%;  transform: translateX(-50%) rotate(3deg); }
-    .bottom      { bottom: 10%; left: 50%; transform: translateX(-50%) rotate(-3deg); }
+    /* Responsive homojen dağıtım: yüzdelerle konumlar */
+    .top-left    { top: 15%; left: 15%; transform: rotate(-10deg); }
+    .top-right   { top: 15%; right: 15%; transform: rotate(10deg); }
+    .bottom-left { bottom: 15%; left: 15%; transform: rotate(5deg); }
+    .bottom-right{ bottom: 15%; right: 15%; transform: rotate(-5deg); }
+    .left        { top: 50%; left: 5%; transform: translateY(-50%) rotate(-8deg); }
+    .right       { top: 50%; right: 5%; transform: translateY(-50%) rotate(8deg); }
+    .top         { top: 5%; left: 50%; transform: translateX(-50%) rotate(3deg); }
+    .bottom      { bottom: 5%; left: 50%; transform: translateX(-50%) rotate(-3deg); }
+
+    /* Yazıların çok küçük olmaması için mobil ayarı */
+    @media (max-width: 600px) {
+      .center-text {
+        font-size: 8vw;
+      }
+
+      .love-text {
+        font-size: 4vw;
+      }
+    }
   </style>
 </head>
 <body>
